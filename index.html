@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Romel Florian - Portfolio</title>
+	 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet"> 
+	<style>
+		body{
+			    font-family: 'Open Sans', sans-serif;
+		}
+	   	*{
+	   		padding: 0;
+	   		margin: 0;
+	   	}
+	   	html{
+			scroll-behavior: smooth;
+		}
+		#btn{
+			display: none;
+		}
+		.nav ul{
+			display: inline-block;
+			padding: 20px 200px 20px 200px;
+		}
+		.nav ul li{
+			display: inline-block;
+		}
+
+		.nav ul:nth-child(1) li a{
+			font-size:24px ;
+		}
+		.nav ul li a{
+			text-decoration: none;
+			font-size:18px;
+			color:black;
+		}
+		.nav ul:nth-child(2){
+			float: right;
+		}
+		.nav ul:nth-child(2) li{
+			padding: 0 10px;
+		}
+		.nav ul:nth-child(2) li a:hover{
+			color:#0004d4;
+			
+		}
+		.sticky-nav{
+			position: fixed;
+			top:0%;
+			height: auto;
+			width: 100%;
+			background:white;
+			box-shadow: 0px 0px 10px rgba(0,0,0,.1);	
+		}
+		
+
+		.header-information .container{
+			padding: 20px 200px 10px 200px;
+		}
+		.container{
+			display: grid;
+			grid-template-columns: auto auto;
+		}
+		.header-information h2{
+			font-size: 25px;
+			color:#0004d4;
+
+		}
+		.header-information h1{
+			font-size: 60px;
+		}
+		.header-information h3{
+			color: #fadd00;
+			font-size: 19px;
+			line-height: 0;	
+			padding: 20px 0 20px 0;		
+		}
+		.header-information p{
+			color: #999 ;
+			font-size: 19px;
+			padding:0px 25px 20px 0;	
+			
+		}
+		.header-information .container div:nth-child(1){
+			padding-top: 80px;
+		}
+		.header-information .container a{
+			border-radius: 50px;
+			background:#0004d4;
+			padding: 15px 35px 15px 35px;
+			color: white;
+			font-size: 16px;
+			display: inline-block;
+			text-decoration: none;
+			font-weight: 700;
+		}
+		.skills{
+			padding-top: 75px;
+			text-align: center;
+		}
+		.skills h1{
+			color:#0004d4;
+		}
+
+		.skills .container{
+			display: grid;
+			grid-template-columns: auto auto auto ;
+			grid-gap: 72px;
+			padding: 20px 200px 10px 200px;
+
+		}
+
+		.skills .container div{
+			width: 316px;
+			height: 164px;
+			border: 2px solid #DEDEDE;
+			text-align: center;
+			font-size: 21px;
+			text-transform: uppercase;
+			box-shadow: 18px 0px 87px rgba(10, 15, 70, .07);
+			border-radius: 12px;
+			width: 316px;
+			height: 164px;
+		}
+		.skills .container div h3{
+			font-weight: 500;
+		}
+		.skills .container div img{
+			width: 55px;
+			height: 50px;
+			padding-top: 30px;
+			padding-bottom: 20px;
+		}
+		.portfolio{
+			padding: 150px 0 25px 0;
+			text-align: center;
+		}
+		.portfolio h1{
+			color:#0004d4;
+			padding: 10px 0 20px 0;
+		}
+		.emails-selector{
+			padding: 0 0 25px 0;
+		}
+		.emails-selector a{
+			text-decoration: none;
+			color: black;
+			font-weight: 500;
+			padding: 0 20px;
+			cursor: pointer;
+		}
+		.portfolio .container{
+			display: flex;
+			flex-wrap: wrap;
+			margin: auto;
+			align-content: center;
+			padding: 20px 200px 10px 200px;
+			gap:10px;
+
+		}
+		.portfolio .container div{
+			width: 346px;
+		}
+		.portfolio .container img{
+			border-radius: 25px;
+			width: 100%;
+		}
+		.newsletter{
+			border: 10px solid #0004d4;
+			border-radius: 25px;
+		}
+		.transactional{
+			border: 10px solid #f00c0c;
+			border-radius: 25px;
+		}
+		.promotional{
+			border: 10px solid #2eeb28;
+			border-radius: 25px;
+		}
+		.email-description{
+			display: none;
+			padding: 0px 0 25px 0;
+		}
+		.email-description h3{
+			font-size:18px;
+			font-size: 500;
+			line-height: 2;
+			
+		}
+		.email-description p{
+			color: #6F6B80;
+			font-size: 700;
+			font-size: 14px;
+		}
+		.active{
+			color: #0004d4 !important;
+
+		}
+		.aboutme {
+			padding-top: 80px;
+		}
+		.aboutme .container{
+			display: grid;
+			grid-template-columns: auto auto;
+			grid-gap: 25px;
+			padding: 20px 200px 10px 200px;
+		}
+		.aboutme h3{
+			color: #0004d4;
+			font-size: 22px;
+			font-weight: 500;
+		}
+		.aboutme h1{
+			font-size: 40px;
+			padding-bottom: 20px;
+		}
+		.aboutme p{
+			font-size: 18px;
+			color:  #999 ;
+			line-height: 2;
+		}
+		.aboutme .container div:nth-child(2){
+			padding-top: 100px;
+			padding-left: 50px;
+
+		}
+		.social-media{
+			margin-top: 15px;
+		}
+		.social-media a{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			color: white;
+			text-align: center;
+			font-size: 20px;
+			border-radius: 50%;
+		}
+		.social-media a:nth-child(1){
+			background-color:black;
+			padding: 4px;
+		}
+		.social-media a:nth-child(2){
+			background-color: #007AB9;
+			padding: 4px;
+		}
+		footer{
+			background:#F2F5FB;
+			width: 100%;
+			height: auto;
+		}
+		footer .container{
+			padding: 50px 350px 70px 250px;
+		}
+		footer .container  p{
+			font-size: 16px;
+			color:#6F6B80;
+			
+
+		}
+		@media only screen and ( max-width: 767px){
+			nav{
+				display: block;
+				z-index: 100;
+				padding: 10px;
+				
+				
+			}
+			nav ul {
+				padding:0 !important;
+			}
+
+			      .responsive li a  {
+					display:block !important;
+					text-align: left;
+					text-decoration: none;
+					font-size: 15px !important;
+					font-weight: 500;
+
+				}
+				.responsive li{
+					display: block !important;
+					margin-left: 10px;
+					margin-bottom:10px;
+					z-index:1;
+					transition: 1s;
+				}
+				.responsive{
+					margin: auto;
+					margin-top:20px;
+					margin-bottom:10px;
+					width: 100%;
+					
+
+
+				}
+			.navbar a{
+				display: none;
+			}
+
+			#btn{
+				display: inline-block;
+				color: black;
+				width:31px;
+				font-size: 30px;
+				transition: 1s;		
+				position: fixed;
+				right: 8px;
+				top: 10px;
+					
+			}
+			.nav ul:nth-child(2){
+			float: none;
+			}
+
+			.header-information .container{
+				grid-template-columns: auto;
+				padding: 10px;
+				text-align: center;
+			}
+			.header-information .container img{
+				width: 100%;
+			}
+			.skills .container{
+				grid-template-columns: auto;
+				padding: 10px;
+				text-align: center;
+				grid-gap: 15px;
+			}
+			.skills .container div{
+				width: 100%;
+			}
+			.aboutme .container{
+				grid-template-columns: auto;
+				padding: 10px;
+			}
+			.aboutme .container img{
+				width: 100%;
+			}
+			.aboutme .container div:nth-child(2){
+				padding:10px;
+			}
+			.portfolio .container{
+			padding:0px;
+			margin: auto;
+			
+			justify-content: center;
+		  }
+		  .portfolio .container img{
+				width: 100%;
+		  }
+		  .email-description{
+			display: block;
+			text-align: left !important;
+		}
+			footer .container  {
+				padding: 50px 0px 70px 0px;
+				text-align: center;
+				justify-content: center;
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<header id="header">
+		<div class="nav">
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html">romel<span style="color: #0004d4">.dev</span></a>
+					</li>
+				</ul>
+				
+				<ul class="navbar" id="nav" >
+					<li>
+						<a href="#header" class=" menu active">Home</a>
+					</li>
+					<li>
+						<a href="#skills" class=" menu ">Skills</a>
+					</li>
+					<li>
+						<a href="#aboutme" class=" menu ">About</a>
+					</li>
+					<li>
+						<a href="#portfolio" class=" menu ">Portfolio</a>
+					</li>
+				</ul>
+				<i class="fas fa-bars" onclick="responsivemenu();" id="btn"></i>
+			</nav>
+		</div>
+		<div class="header-information">
+			<div class="container">
+				<div>
+					<h2>
+						Hello, I'm
+					</h2>
+					<h1>Romel Florian</h1>
+					<h3>HTML Email Developer</h3>
+					<p>I specialize in the creation and deployment of email marketing campaigns.</p>
+					<a href="#portfolio">Portfolio</a>
+				</div>
+				<div>
+					<img src="./images/header-image.png" alt="">
+				</div>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="skills" id="skills">
+			<h1>Skills</h1>
+		
+		<div class="container">
+		  <div>
+		  	<img src="./images/html-icon.png" alt="">
+		  	<h3>html</h3>
+		  </div>
+		  <div>
+		  	<img src="./images/css-icon.png" alt="">
+		  	<h3>css</h3>
+		  </div>
+		  <div>
+		  	<img src="./images/js-icon.png" alt="">
+		  	<h3>javascript</h3>
+		  </div>
+		  <div>
+		  	<img src="./images/photoshop-icon.png" alt="">
+		  	<h3>photoshop</h3>
+		  </div>
+		  <div>
+		  	<img src="./images/responsive.png" alt="">
+		  	<h3>responsive design</h3>
+		  </div>
+		   <div>
+		  	<img src="./images/litmus-icon.png" alt="">
+		  	<h3>litmus</h3>
+		  </div>
+		</div>
+	  </div>
+	  <div class="aboutme" id="aboutme">
+	  	<div class="container">
+	  		<div>
+	  			<img src="./images/header-image.png" alt="about me image">
+	  		</div>
+	  		<div>
+	  			<h3>About Me</h3>
+	  			<h1>Get To Know Me</h1>
+	  			<p>A HTML Email Developer with a comprehensive understanding of email design. From translating design mockups into HTML email documents, I create original and effective designs that take all project deliverables into account. Personal development is very important to me and I'm constantly improving my skills and knowledge to get the best results from every campaign. My meticulous attention to detail and ability to work within tight deadlines ensures I deliver projects on time, on budget, and on specification.</p>
+				<div class="social-media">
+					<a href="https://github.com/romel1898"><i class="fa fa-github"></i></a>
+					<a href="https://www.linkedin.com/in/romel-florian-ab0974172"><i class="fa fa-linkedin"></i></a>
+				</div>
+	  		</div>
+	  	</div>
+	  </div>
+	  <div class="portfolio" id="portfolio">
+	  		<h1>Portfolio</h1>
+	  		<div class="emails-selector">
+	  			<a  class="list active " data-filter="all" >All</a>
+	  			<a  class="list " data-filter="promotional">Promotional</a>
+	  			<a  class="list" data-filter="newsletter">Newsletter</a>
+	  			<a  class="list" data-filter="transactional"> Transactional</a>
+	  		</div>
+	  		<div class="container">
+	  			<div class="itemBox promotional">
+	  				<a href="#"><img src="./images/shein-email.png" alt="Shein Email" ></a>
+	  			</div>
+				<div class="email-description">
+					<h3>Shein</h3>
+					<p>Promotional</p>
+				</div>
+	  			<div class="itemBox newsletter">
+	  				<a href="#"><img src="./images/espn-mail.png" alt="Espn Email"></a>
+	  			</div>
+				  <div class="email-description">
+					<h3>Espn</h3>
+					<p>Newsletter</p>
+				</div>
+	  			<div class="itemBox transactional">
+	  				<a href="#"><img src="./images/ps-email.png" alt="Playstation Email"></a>
+	  			</div>
+				  <div class="email-description">
+					<h3>Playstation</h3>
+					<p>Transactional</p>
+				</div>
+	  			<div class="itemBox promotional">
+	  				<a href="#"><img src="./images/pandora-email.png" alt="Pandora Email"></a>
+	  			</div>
+				  <div class="email-description">
+					<h3>Pandora</h3>
+					<p>Promotional</p>
+				</div>
+	  			<div class="itemBox newsletter">
+	  				<a href="#"><img src="./images/interscope-email.png" alt="Interscope Email"></a>
+	  			</div>
+				  <div class="email-description">
+					<h3>Interscope</h3>
+					<p>Newsletter</p>
+				</div>
+	  			<div class="itemBox transactional">
+	  				<a href="#"><img src="./images/chipotle-email.png" alt="Chipotle Email"></a>
+	  			</div>
+				  <div class="email-description">
+					<h3>Chipotle</h3>
+					<p>Transactional</p>
+				</div>
+	  			
+
+	  		</div>
+	  </div>
+	</section>
+	<footer>
+		<div class="container">
+			<p>Created by Romel Florian © 2022</p>
+		</div>
+	</footer>
+
+
+	<script src="https://kit.fontawesome.com/532a64caf8.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
+	<script src="./js/main.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>
